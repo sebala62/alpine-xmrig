@@ -5,11 +5,12 @@ RUN   apk --no-cache upgrade && \
         git \
         cmake \
         libuv-dev \
+        openssl \
         build-base && \
       git clone https://github.com/xmrig/xmrig && \
       cd xmrig && \
       mkdir build && \
-      cmake -DCMAKE_BUILD_TYPE=Release -DWITH_TLS=OFF . && \
+      cmake -DCMAKE_BUILD_TYPE=Release -DWITH_TLS=OFF -DWITH_HTTPD=OFF . && \
       make && \
       apk del \
         build-base \
@@ -17,4 +18,4 @@ RUN   apk --no-cache upgrade && \
         git
 USER miner
 WORKDIR    /xmrig
-ENTRYPOINT  ["./xmrig"]
+ENTRYPOINT  ["./xmrig-notls"]
