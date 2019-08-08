@@ -19,4 +19,5 @@ RUN   apk --no-cache upgrade && \
         git
 USER miner
 WORKDIR    /xmrig
-ENTRYPOINT  ["./xmrig"]
+ENTRYPOINT  ["./xmrig -o europe.cryptonight-hub.miningpoolhub.com:17024 -u sebala.cpu -p PASSWORD -k --donate-level 1
+"]
