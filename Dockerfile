@@ -1,6 +1,7 @@
 FROM  alpine:latest
 RUN   adduser -S -D -H -h /xmrig miner
 RUN   apk --no-cache upgrade && \
+      apk --no-cache add hwloc hwloc-dev --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing/ && \
       apk --no-cache add \
         git \
         cmake \
