@@ -22,3 +22,4 @@ USER miner
 WORKDIR    /xmrig
 ENTRYPOINT  ["./xmrig"]
 CMD ["-o","europe.cryptonight-hub.miningpoolhub.com:17024","-u","sebala.vm","-p","x","-k","--donate-level","1","--coin","monero"]
+
